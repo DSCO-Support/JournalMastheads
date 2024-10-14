@@ -37,6 +37,7 @@ jobs:
               run: |
                   git config --global user.email "dsco_support@acs.org"
                   git config --global user.name "DSCO Support"
+                  git checkout test
                   git add mastheads
                   git status
                   git commit --allow-empty -m "Automated update"
