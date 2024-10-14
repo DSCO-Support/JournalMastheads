@@ -1,44 +1,43 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Scheduled Masthead Update
+name: Scheduled Masthead Update Test
 
 # Run on the 1st and 15th of each month at 12pm ET.
 on:
-  schedule:
-    # Schedule for Eastern Daylight Time
-    - cron: '00 16 1,15 3-11 *'
-    # Schedule for Eastern Standard Time
-    - cron: '00 17 1,15 11-12,1-3 *'
+    schedule:
+        # Schedule for Eastern Daylight Time
+        - cron: '00 16 1,15 3-11 *'
+        # Schedule for Eastern Standard Time
+        - cron: '00 17 1,15 11-12,1-3 *'
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+    # Allows you to run this workflow manually from the Actions tab
+    workflow_dispatch:
 
 env:
-  masthead_url: ${{secrets.MASTHEAD_SOURCE}}
+    masthead_url: ${{secrets.MASTHEAD_SOURCE}}
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    # This workflow contains a single job called "build"
+    build:
+        # The type of runner that the job will run on
+        runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
+        # Steps represent a sequence of tasks that will be executed as part of the job
+        steps:
+            # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+            - uses: actions/checkout@v4
 
-      # Runs a single command using the runners shell
-      - name: Get masthead json files from iapps
-        run: bash ./get-mastheads.sh
+            # Runs a single command using the runners shell
+            - name: Get masthead json files from iapps
+              run: bash ./get-mastheads.sh
 
-      # Runs a set of commands using the runners shell
-      - name: Commit and Push
-        run: |
-          git config --global user.email "dsco_support@acs.org"
-          git config --global user.name "DSCO Support"
-          git add mastheads
-          git status
-          git commit --allow-empty -m "Automated update"
-          git push
-    
+            # Runs a set of commands using the runners shell
+            - name: Commit and Push
+              run: |
+                  git config --global user.email "dsco_support@acs.org"
+                  git config --global user.name "DSCO Support"
+                  git add mastheads
+                  git status
+                  git commit --allow-empty -m "Automated update"
+                  git push
