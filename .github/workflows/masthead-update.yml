@@ -28,16 +28,18 @@ jobs:
             # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
             - uses: actions/checkout@v4
 
+            - name: Checkout test branch
+              run: git checkout test
+
             # Runs a single command using the runners shell
             - name: Get masthead json files from iapps
               run: bash ./get-mastheads.sh
 
             # Runs a set of commands using the runners shell
-            - name: Commit and Push
+            - name: Commit and Push to test branch
               run: |
                   git config --global user.email "dsco_support@acs.org"
                   git config --global user.name "DSCO Support"
-                  git checkout test
                   git add mastheads
                   git status
                   git commit --allow-empty -m "Automated update"
