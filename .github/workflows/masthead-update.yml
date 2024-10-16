@@ -6,7 +6,7 @@ name: Scheduled Masthead Update Test (main)
 on:
     schedule:
         # Schedule for Eastern Daylight Time
-        - cron: '30 19 1,16 3-11 *'
+        - cron: '05 20 1,16 3-11 *'
         # Schedule for Eastern Standard Time
         - cron: '00 17 1,15 11-12,1-3 *'
 
@@ -29,9 +29,14 @@ jobs:
         steps:
             # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
             - uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
 
             - name: Checkout test branch
-              run: git checkout test
+              run: |
+                  git fetch origin test
+                  git branch -a
+                  git checkout -b test origin/test
 
             # Runs a single command using the runners shell
             - name: Get masthead json files from iapps
