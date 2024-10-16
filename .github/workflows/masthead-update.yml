@@ -6,7 +6,7 @@ name: Scheduled Masthead Update
 on:
     schedule:
         # Schedule for Eastern Daylight Time
-        - cron: '55 17 1,16 3-11 *'
+        - cron: '00 16 1,15 3-11 *'
         # Schedule for Eastern Standard Time
         - cron: '00 17 1,15 11-12,1-3 *'
 
