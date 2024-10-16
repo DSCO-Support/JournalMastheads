@@ -1,12 +1,12 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Scheduled Masthead Update Test
+name: Scheduled Masthead Update Test (main)
 
 # Run on the 1st and 15th of each month at 12pm ET.
 on:
     schedule:
         # Schedule for Eastern Daylight Time
-        - cron: '10 18 1,16 3-11 *'
+        - cron: '00 19 1,16 3-11 *'
         # Schedule for Eastern Standard Time
         - cron: '00 17 1,15 11-12,1-3 *'
 
