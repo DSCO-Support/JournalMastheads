@@ -1,0 +1,26 @@
+{
+  "data": [
+    {
+      "Email": "",
+      "First Name": "Thomas F.",
+      "Last Name": "Hofmann",
+      "Masthead Category": "Editor-in-Chief",
+      "Country": "Germany",
+      "Website": "",
+      "Journal Name": "ACS Nutrition Science",
+      "Institution Name": "Technische Universität München",
+      "Masthead Disclaimer": false
+    },
+    {
+      "Email": "",
+      "First Name": "Jaume",
+      "Last Name": "Amengual",
+      "Masthead Category": "Deputy Editor",
+      "Country": "USA",
+      "Website": "",
+      "Journal Name": "ACS Nutrition Science",
+      "Institution Name": "University of Illinois Urbana Champaign",
+      "Masthead Disclaimer": false
+    }
+  ]
+}
