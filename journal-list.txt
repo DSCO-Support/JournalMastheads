@@ -35,6 +35,7 @@ amrcda.json
 anaccx.json
 ancac3.json
 ancham.json
+anmafm.json
 aoiab5.json
 apaccd.json
 apcach.json
