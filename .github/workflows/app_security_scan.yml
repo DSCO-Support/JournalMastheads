@@ -1,0 +1,14 @@
+name: "Step 0: Application Security Scan"
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ['*']
+
+jobs:
+  app_security_scan:
+    uses: acspbsit/devops-templates/.github/workflows/app_security_scan.yml@main
+    with:
+      team-name: "${{ vars.CX_TEAM_NAME }}"
+      upload-result: true
+    secrets: inherit
