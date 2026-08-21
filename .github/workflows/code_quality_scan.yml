@@ -1,0 +1,12 @@
+name: "SonarQube Analysis"
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ['*']
+
+jobs:
+  code_quality_scan:
+    uses: acspbsit/devops-templates/.github/workflows/code_quality_scan-other.yml@main
+    secrets: inherit
+
